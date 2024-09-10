@@ -9,8 +9,7 @@ Este proyecto permite a un usuario predeterminado crear, ver y eliminar mensajes
 Serie de pasos para instalar y ejecutar el proyecto localmente:
 
 1. Clona el repositorio:
-   ```bash
-  git clone https://github.com/tu-usuario/TableroMensajes.git
+  git clone https://github.com/gabitoeo/TableroMensajes.git
 2. Navega al directorio del proyecto
   cd TableroMensajes
 3. Crea un Entorno virtual
