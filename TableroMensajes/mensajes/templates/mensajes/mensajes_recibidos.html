@@ -1,0 +1,12 @@
+{% extends 'mensajes/base.html' %}
+
+{% block title %}Mensajes Recibidos{% endblock %}
+
+{% block content %}
+<h2>Mensajes Recibidos</h2>
+<ul>
+    {% for mensaje in mensajes %}
+        <li>{{ mensaje.contenido }} - de {{ mensaje.remitente.username }} el {{ mensaje.fecha_creacion }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tablero de Mensajes{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Tablero de Mensajes</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'crear_mensaje' %}">Crear Mensaje</a></li>
+                <li><a href="{% url 'ver_mensajes_recibidos' %}">Mensajes Recibidos</a></li>
+                <li><a href="{% url 'ver_mensajes_enviados' %}">Mensajes Enviados</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tablero de Mensajes</p>
+    </footer>
+</body>
+</html>
