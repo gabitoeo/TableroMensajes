@@ -24,10 +24,10 @@ Serie de pasos para instalar y ejecutar el proyecto localmente:
   python manage.py runserver
 
 ## Funcionalidades
-1. Crear un mensaje /mensajes/crear
-2. Ver mensajes enviados /mensajes/enviados
-3. Ver mensajes recibidos /mensajes/recibidos
-4. ELiminar un mensajes /mensajes/eliminar
+1. Crear un mensaje '/mensajes/crear'
+2. Ver mensajes enviados '/mensajes/enviados'
+3. Ver mensajes recibidos '/mensajes/recibidos'
+4. ELiminar un mensajes '/mensajes/eliminar'
 
 ## Dependencias 
 Django
