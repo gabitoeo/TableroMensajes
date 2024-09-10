@@ -1,21 +1,20 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Mensaje
 from .forms import MensajeForm
+from django.views.generic.edit import CreateView
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 
-def crear_mensaje(request):
-    if request.method == 'POST':
-        form = MensajeForm(request.POST)
-        if form.is_valid():
-            mensaje = form.save(commit=False)
-            
-            mensaje.remitente = User.objects.get(username='predeterminado') 
-            mensaje.save()
-            return redirect('ver_mensajes_enviados')
-    else:
-        form = MensajeForm()
-    
-    return render(request, 'mensajes/crear_mensaje.html', {'form': form})
+class CrearMensajeView(CreateView):
+    model = Mensaje
+    template_name = 'mensajes/crear_mensaje.html'
+    fields = ['destinatario', 'contenido']
+    success_url = reverse_lazy('ver_mensajes_enviados')
+
+    def form_valid(self, form):
+        usuario_predeterminado = User.objects.get(username='predeterminado')
+        form.instance.remitente = usuario_predeterminado
+        return super().form_valid(form)
 
 
 def ver_mensajes_recibidos(request):
